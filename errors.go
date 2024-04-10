@@ -9,6 +9,13 @@ type baseErr struct {
 	msg string
 }
 
+
+// COMPAT@v0.2 same interface as StdLib's "errors"
+func New(x string) error {
+	return &baseErr{msg: x}
+}
+
+
 func NewBasicErr(x string) error {
 	return &baseErr{msg: x}
 }
